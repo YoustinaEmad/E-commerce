@@ -1,0 +1,56 @@
+<section class="my-3">
+<div class="row g-0">
+    <div class="col-md-8">
+        <owl-carousel-o [options]="mainSlider">
+            <ng-template carouselSlide> <img src="./assets/images/main-slider-1.jpeg" class="w-100" height="400"></ng-template>
+            <ng-template carouselSlide> <img src="./assets/images/main-slider-2.jpeg" class="w-100" height="400"></ng-template>
+            <ng-template carouselSlide> <img src="./assets/images/main-slider-3.jpeg" class="w-100" height="400"></ng-template>
+          </owl-carousel-o>
+        
+    </div>
+    <div class="col-md-4">
+        <img src="./assets/images/main-slider-2.jpeg"  class="w-100" height="200"> 
+        <img src="./assets/images/main-slider-3.jpeg" class="w-100" height="200">
+    </div>
+</div>
+</section>
+
+
+<section class="my-3">
+    <owl-carousel-o [options]="customOptions">
+
+        <ng-container *ngFor="let item of categories">
+          <ng-template carouselSlide >
+           <div>
+            <img [src]="item.image" height="280" [alt]="item.name" class="w-100"/>
+            <h3 class="h6">{{item.name}}</h3>
+           </div>
+          </ng-template>
+        </ng-container>
+    
+      </owl-carousel-o>
+</section>
+
+
+<section class="my-4">
+    <h2>Popular Products</h2>
+    <input type="search" class="form-control w-50 mx-auto my-3 " placeholder="search..." [(ngModel)]="searchTerm">
+    <div class="row g-4" >
+        <div class="col-md-2" *ngFor="let prd of products.slice(0,12)| search:searchTerm ">
+            <div class="product cursor-pointer">
+                <div class="p-2 cursor-pointer" [routerLink]="['/details',prd._id]">
+                    <img [src]="prd.imageCover" class="w-100" [alt]="prd.title">
+                <h3 class="h6">{{prd.category.name}}</h3>
+                <h4 class="h6">{{prd.title.split(' ').slice(0,2).join(" ")}}</h4>
+                <div class="d-flex align-items-center justify-content-between">
+                    <span>{{prd.price | currency}}</span>
+                    <div><i class="fas fa-star rating-color"></i> 
+                        <span class="text-muted">{{prd.ratingsAverage}}</span>
+                    </div>
+                </div>
+                </div>
+                <button class="btn-main w-100" (click)="addToCard(prd._id)">Add to card</button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+<section class="w-75 mx-auto bg-main-light p-3 rounded-3 my-2">
+    <h1>Shop Cart</h1>
+    <p class="text-main">Total Price :{{cardData.totalCartPrice | currency}}</p>
+    <div class="row border-bottom pb-2" *ngFor="let prd of cardData.products">
+        <div class="col-md-1">
+            <img class="w-100" [src]="prd.product.imageCover">
+        </div>
+        <div class="col-md-11 ">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h3 class="h5">{{prd.product.title}}</h3>
+                    <p class="text-main">{{prd.price | currency}}</p>
+                    <button class="btn p-0 m-0 " (click)="removeCartProduct(prd.product._id)"><i class="fa-regular fa-trash-can"></i> Remove</button>
+                </div>
+                <div>
+                    <button class="btn border border-success" (click)="changeCount(prd.product._id,prd.count+1)">+</button>
+                    <span> {{prd.count}} </span>
+                    <button class="btn border border-success " (click)="changeCount(prd.product._id,prd.count-1)">-</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button [routerLink]="['/checkout',cardData._id]" class="btn-main w-30 h-60" >Online Payment<img src="./assets/images/visa-1.svg"></button>
+</section>

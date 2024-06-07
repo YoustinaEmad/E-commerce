@@ -1,0 +1,108 @@
+/* Footer Styles */
+footer {
+    margin-top: 5rem;
+    background-color: var(--light-color);
+    font-family: var(--font-family);
+    color: black; 
+}
+
+footer .container-fluid {
+    margin-bottom: 2rem;
+}
+
+.divider {
+    height: 0.25vh;
+    background-color: #ccc; 
+    width: 95%;
+    margin: auto;
+    
+}
+
+#sidep {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 2rem;
+}
+
+.container .footer {
+    display: flex;
+    justify-content: space-between;
+    grid-row-gap: 20px;
+    flex-wrap: wrap;
+    margin: 50px 0px;
+}
+
+.container .footer .footer1 {
+    width: 20%;
+}
+
+.container .footer .footer-second {
+    width: 38%;
+}
+
+.footer .footer1 h2,
+#special {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--main-color); 
+    text-transform: capitalize;
+}
+
+.footer .footer1 li {
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.footer .footer1 li a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: black; /* Text color for links */
+}
+
+.container hr {
+    background: black; /* Line color set to black */
+    margin: 15px 0px;
+    height: 2px;
+    width: 100%;
+}
+
+.container .copy {
+    margin: 15px 0px;
+    text-align: center;
+    color: black;
+}
+
+.container .copy section {
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.btn {
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 20px;
+}
+
+.btn-main {
+    background-color: var(--main-color);
+    padding: 7px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.btn-main:hover {
+    background-color: #11bd11;
+}
+
+@media (max-width: 768px) {
+    .container .footer .footer1 {
+        width: 30%;
+    }
+
+    .container .footer .footer-second {
+        width: 70%;
+    }
+}

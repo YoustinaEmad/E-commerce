@@ -1,0 +1,19 @@
+<section class="bg-main-light p-4 rounded-3 my-3 shadow w-50 mx-auto">
+    <form [formGroup]="checkoutForm" (ngSubmit)="handleForm()">
+        <div>
+            <label for="details">Details</label>
+            <input formControlName="details" type="text" id="details" class="form-control">
+
+        </div>
+        <div>
+            <label for="phone">Phone</label>
+            <input formControlName="phone" type="tel" id="phone" class="form-control">
+
+        </div>
+        <div>
+            <label for="city">City</label>
+            <input formControlName="city" type="text" id="phone" class="form-control">
+        </div>
+<button class="btn-main my-3">CkeckOut</button>
+    </form>
+</section>
